@@ -1,6 +1,6 @@
 <template>
 <div>
-<h1> Form page</h1>
+<v-card-title>Please fill in the form below</v-card-title>
 <component :is="form"/>
 </div>
 </template>
