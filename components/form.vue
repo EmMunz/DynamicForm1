@@ -47,6 +47,7 @@
     <!-- <v-btn color="primary" @click="addUsers()">Submit</v-btn> -->
     <v-dialog
       v-model="dialog"
+      persistent
       width="500"
     >
       <template v-slot:activator="{ on, attrs }">
@@ -76,7 +77,7 @@
           <v-btn
             color="primary"
             text
-            @click="dialog = false"
+            @click="closeDialog()"
           >
             Cancel
           </v-btn>
@@ -99,6 +100,7 @@ import axios from "axios";
 export default {
     data(){
         return {
+        dialog:false,
         name:[],
         registrations:[],
         age:[],
@@ -147,7 +149,10 @@ export default {
         this.phoneNumber=[]
         this.dialog=false;
         alert("File has been submitted successfully");
-    }  
+    },
+    closeDialog() {
+    this.dialog=false
+    }
 }
 }
 </script>
